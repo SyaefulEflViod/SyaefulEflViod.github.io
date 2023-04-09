@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.all{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 15%;
+    left: 36%;
+}
+.container{
+    background: transparent;
+    border: 1px solid white ;
+    width: 360px;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    z-index: 2;
+}
+ .container input[type="text"]{
+    width: 100%;
+    height: 100px;
+    outline: none;
+    text-align: right;
+    font-size: 30px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: inset 0 0 5px 2px rgb(0, 0, 0, 75)
+}
+.container input[type="button"]{
+    width: calc(100% / 4 - 5px);
+    height: 60px;
+    color: black;
+    font-size: large;
+    border-radius: 10px;
+    background-color: cyan;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+}
+.container input[type="button"]:hover{
+    box-shadow: 
+    0 0 5px cyan, 
+    0 0 25px cyan, 
+    0 0 50px cyan, 
+    0 0 100px cyan;
+}
+
+/* background Hover */
+
+section{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    animation: changeColor 5s linear infinite;
+}
+@keyframes changeColor{
+    0%{
+        filter: hue-rotate(0deg);   
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+span{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00ff0a;
+    transform: scale(0.1);
+    box-shadow: 0 0 10px#00ff0a, 
+    0 0 20px #00ff0a, 
+    0 0 40px #00ff0a,  
+    0 0 60px #00ff0a,
+    0 0 80px #00ff0a, 
+    0 0 100px #00ff0a;
+        
+border-radius: 50%;
+pointer-events: none;
+transition: 2s;
+}
+span:hover::before{
+    transform: scale(1);
+    transition: 0s;
+}
+@media (max-width: 700px){
+    .all{
+        left: 26%;
+    }
+}
+@media (max-width: 800px){
+    .all{
+        left: 25%;
+    }
+}   
+@media (max-width: 600px){
+    .all{
+        left: 20%;
+    }
+}
+@media(max-width: 500px){
+    .all{
+        left: 15%;
+    }
+}
